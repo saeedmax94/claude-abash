@@ -1,15 +1,134 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>النوبة</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet" />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nubia · النوبة</title>
+<meta name="description" content="A website celebrating Sudanese Nubian culture.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=IBM+Plex+Sans+Arabic:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --nile:#14304A; --ochre:#D9A441; --turq:#2A9D8F; --henna:#7A2E1D; --palm:#3F6B4A; --wash:#F2F4F1;
+  --ink:#14304A;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--wash);color:var(--ink);font:400 1.0625rem/1.7 "IBM Plex Sans Arabic",system-ui,sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--turq);outline-offset:3px}
+.band{height:28px;background-color:var(--henna);
+  background-image:
+    linear-gradient(135deg,var(--ochre) 25%,transparent 25%),
+    linear-gradient(225deg,var(--ochre) 25%,transparent 25%),
+    linear-gradient(315deg,var(--ochre) 25%,transparent 25%),
+    linear-gradient(45deg,var(--ochre) 25%,transparent 25%);
+  background-size:28px 28px;background-position:-14px 0,-14px 0,0 0,0 0}
+.band.thin{height:14px;background-size:14px 14px;background-position:-7px 0,-7px 0,0 0,0 0}
+header.top{background:var(--nile);color:var(--wash);display:flex;justify-content:space-between;align-items:center;padding:.9rem clamp(1rem,5vw,3rem)}
+header.top strong{font:700 1.25rem "Reem Kufi",sans-serif}
+button.lang{font:500 1rem "IBM Plex Sans Arabic",sans-serif;background:transparent;color:var(--wash);border:2px solid var(--ochre);border-radius:2px;padding:.35rem .9rem;cursor:pointer}
+button.lang:hover{background:var(--ochre);color:var(--nile)}
+.hero{background:var(--nile);color:var(--wash);padding:clamp(3rem,9vw,7rem) clamp(1rem,5vw,3rem) clamp(3rem,7vw,5rem)}
+.hero h1{margin:0;font:700 clamp(4.5rem,18vw,12rem)/.95 "Reem Kufi",sans-serif;color:var(--ochre);letter-spacing:0}
+.hero p{max-width:34ch;margin:1.5rem 0 0;font-size:clamp(1.15rem,2.4vw,1.5rem);line-height:1.5}
+main{padding:0 clamp(1rem,5vw,3rem)}
+section{max-width:68ch;padding:clamp(2.5rem,6vw,4.5rem) 0;border-block-end:2px solid var(--turq)}
+section:last-child{border-block-end:0}
+h2{font:700 clamp(1.8rem,4vw,2.6rem)/1.2 "Reem Kufi",sans-serif;margin:0 0 1rem;color:var(--henna)}
+p{margin:0 0 1rem}
+dl.timeline{margin:1.5rem 0 0;padding:0;border-inline-start:4px solid var(--ochre)}
+dl.timeline dt{font:700 1.15rem "Reem Kufi",sans-serif;margin:0;padding-inline-start:1.25rem;color:var(--nile)}
+dl.timeline dd{margin:0 0 1.25rem;padding-inline-start:1.25rem}
+ul.plain{padding:0;margin:0;list-style:none}
+ul.plain li{padding:.6rem 0;border-block-end:1px solid rgba(20,48,74,.2)}
+footer{background:var(--nile);color:var(--wash);padding:2rem clamp(1rem,5vw,3rem)}
+footer a{color:var(--ochre)}
+[dir=rtl] body{font-size:1.125rem}
+</style>
+</head>
+<body>
+<header class="top">
+  <strong data-en="Nubia" data-ar="النوبة">Nubia</strong>
+  <button class="lang" id="lang" type="button" aria-label="Switch language">العربية</button>
+</header>
+
+<div class="hero">
+  <h1 data-en="Nubia" data-ar="النوبة">Nubia</h1>
+  <p data-en="Five thousand years of life along the Nile in northern Sudan: its kingdoms, languages, songs and painted homes."
+     data-ar="خمسة آلاف سنة من الحياة على ضفاف النيل في شمال السودان: ممالكها ولغاتها وأغانيها وبيوتها الملوّنة.">
+     Five thousand years of life along the Nile in northern Sudan: its kingdoms, languages, songs and painted homes.</p>
+</div>
+<div class="band" role="presentation"></div>
+
+<main>
+  <section id="history">
+    <h2 data-en="A river and its kingdoms" data-ar="نهر وممالكه">A river and its kingdoms</h2>
+    <p data-en="Nubia follows the Nile from Aswan in Egypt south into Sudan. Some of Africa’s oldest states grew here."
+       data-ar="تمتد النوبة مع النيل من أسوان في مصر جنوباً إلى السودان، وقد نشأت هنا بعض أقدم دول أفريقيا.">
+       Nubia follows the Nile from Aswan in Egypt south into Sudan. Some of Africa’s oldest states grew here.</p>
+    <dl class="timeline">
+      <dt data-en="Kerma, about 2500 BCE" data-ar="كرمة، نحو 2500 ق.م">Kerma, about 2500 BCE</dt>
+      <dd data-en="The first large city-state of the upper Nile." data-ar="أول دولة مدينة كبيرة في أعالي النيل.">The first large city-state of the upper Nile.</dd>
+      <dt data-en="Kingdom of Kush, about 1000 BCE – 350 CE" data-ar="مملكة كوش، نحو 1000 ق.م – 350 م">Kingdom of Kush, about 1000 BCE – 350 CE</dt>
+      <dd data-en="Capitals at Napata and Meroë. The pyramids of Meroë still stand." data-ar="عاصمتاها نبتة ومروي، وما زالت أهرامات مروي قائمة.">Capitals at Napata and Meroë. The pyramids of Meroë still stand.</dd>
+      <dt data-en="Christian kingdoms, 6th – 15th century" data-ar="الممالك المسيحية، القرن 6 – 15">Christian kingdoms, 6th – 15th century</dt>
+      <dd data-en="Nobatia, Makuria and Alodia, with Old Nubian written in its own script." data-ar="نوباتيا والمقرة وعلوة، وكانت النوبية القديمة تُكتب بخطها الخاص.">Nobatia, Makuria and Alodia, with Old Nubian written in its own script.</dd>
+      <dt data-en="1960s, Wadi Halfa" data-ar="الستينيات، وادي حلفا">1960s, Wadi Halfa</dt>
+      <dd data-en="The High Dam flooded Nubian villages. Thousands of families were resettled far from the river." data-ar="أغرق السد العالي القرى النوبية، وأُعيد توطين آلاف الأسر بعيداً عن النهر.">The High Dam flooded Nubian villages. Thousands of families were resettled far from the river.</dd>
+    </dl>
+  </section>
+
+  <section id="language">
+    <h2 data-en="Languages" data-ar="اللغات">Languages</h2>
+    <p data-en="Nubian languages belong to the Nilo-Saharan family. In Sudan, Nobiin and Dongolawi are the best known. Both are spoken at home and in song, and both are under pressure from Arabic in schools and cities."
+       data-ar="تنتمي اللغات النوبية إلى العائلة النيلية الصحراوية. أشهرها في السودان النوبيين والدنقلاوية، وتُتداولان في البيوت والأغاني، وتواجهان ضغط العربية في المدارس والمدن.">
+       Nubian languages belong to the Nilo-Saharan family. In Sudan, Nobiin and Dongolawi are the best known. Both are spoken at home and in song, and both are under pressure from Arabic in schools and cities.</p>
+  </section>
+
+  <section id="music">
+    <h2 data-en="Music and craft" data-ar="الموسيقى والحِرَف">Music and craft</h2>
+    <ul class="plain">
+      <li data-en="Songs sung to the tambour, the lyre of the Nile valley, and to drums at weddings." data-ar="أغانٍ تُغنّى على الطنبور، قيثارة وادي النيل، وعلى الدفوف في الأعراس.">Songs sung to the tambour, the lyre of the Nile valley, and to drums at weddings.</li>
+      <li data-en="House walls painted with geometric patterns in white, ochre, blue and red." data-ar="جدران بيوت مزخرفة بأشكال هندسية بالأبيض والأصفر الترابي والأزرق والأحمر.">House walls painted with geometric patterns in white, ochre, blue and red.</li>
+      <li data-en="Palm-fibre baskets, mats and leatherwork." data-ar="سلال وحُصر من ألياف النخيل ومشغولات جلدية.">Palm-fibre baskets, mats and leatherwork.</li>
+    </ul>
+  </section>
+
+  <section id="contribute">
+    <h2 data-en="Add what you know" data-ar="أضِف ما تعرفه">Add what you know</h2>
+    <p data-en="This site is just starting. If you hold family songs, recipes, photographs or place names, share them so they are kept."
+       data-ar="الموقع في بدايته. إن كانت لديك أغانٍ عائلية أو وصفات أو صور أو أسماء أماكن، شاركها لتبقى محفوظة.">
+       This site is just starting. If you hold family songs, recipes, photographs or place names, share them so they are kept.</p>
+    <p><a href="https://github.com/saeedmax94/claude-abash/issues" data-en="Open an issue on GitHub" data-ar="افتح موضوعاً على GitHub">Open an issue on GitHub</a></p>
+  </section>
+</main>
+
+<div class="band thin" role="presentation"></div>
+<footer>
+  <span data-en="Content is written to be corrected. Please tell us what we got wrong." data-ar="المحتوى قابل للتصحيح. أخبرنا بما أخطأنا فيه.">Content is written to be corrected. Please tell us what we got wrong.</span>
+</footer>
+
+<script>
+(function () {
+  var btn = document.getElementById('lang');
+  var lang = 'en';
+  function apply() {
+    var html = document.documentElement;
+    html.lang = lang;
+    html.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.querySelectorAll('[data-en]').forEach(function (el) {
+      el.textContent = el.getAttribute('data-' + lang);
+    });
+    btn.textContent = lang === 'ar' ? 'English' : 'العربية';
+    document.title = lang === 'ar' ? 'النوبة' : 'Nubia';
+  }
+  btn.addEventListener('click', function () {
+    lang = lang === 'en' ? 'ar' : 'en';
+    apply();
+  });
+})();
+</script>
+</body>
 </html>
